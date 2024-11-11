@@ -5,4 +5,5 @@ Primero, instala todas las dependencias del proyecto ejecutando el siguiente com
 ## 2. Ejecutar json-server
 Para iniciar el servidor , utiliza el siguiente comando:  
 `npm run start:db`
-
+## 3. Ejecutar el proyecto
+`ng serve`
