@@ -1,0 +1,158 @@
+.table {
+    border-collapse: collapse;
+    /* Quitar los espacios entre las celdas */
+    font-family: "Pixelify Sans", sans-serif;
+    /* Fuente estilo pixelado */
+    width: 100%;
+    /* Ancho completo */
+    border: 3px solid #333;
+    /* Borde grueso oscuro */
+}
+
+.table th,
+.table td {
+    border: 2px solid #333;
+    /* Bordes gruesos en cada celda */
+    padding: 10px;
+    /* Espacio dentro de las celdas */
+    text-align: center;
+    /* Centrar el texto */
+    font-size: 18px;
+    /* Tamaño de texto */
+}
+
+.table thead th {
+    background-color: #999;
+    /* Fondo gris para el encabezado */
+    color: #fff;
+    /* Texto blanco para el encabezado */
+    font-size: 20px;
+    /* Tamaño de fuente más grande */
+    text-transform: uppercase;
+    /* Transformar el texto en mayúsculas */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    /* Color alternativo para filas impares */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #d9d9d9;
+    /* Color alternativo para filas pares */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #ccc;
+    /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo general para los botones */
+td button {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    width: 180px;
+    height: 40px;
+    background-color: #005ab9;
+    color: #ffffff;
+    border: 2px solid #012462;
+    padding: 5px;
+    display: inline-block;
+    margin-right: 10px;
+        /* Espacio entre botones */
+        box-shadow: inset 1px 1px 0px 0px #ffffff, inset -1px -1px 0px 0px #002575;
+        transition: background-color 0.2s ease;
+    }
+    
+    td button:hover {
+        background-color: #0a0050;
+        /* Efecto hover azul para los botones generales */
+        cursor: pointer;
+}
+
+/* Específicamente para el botón "Finalizar Recepción" con clase btn-success */
+td button.btn-success {
+    background-color: #28a745;
+    /* Color verde para "Finalizar Recepción" */
+    border-color: #1e7e34;
+}
+
+td button.btn-success:hover {
+    background-color: #1e7e34;
+    /* Verde oscuro al hacer hover */
+    cursor: pointer;
+}
+
+/* Enlaces en la tabla estilo pixelado */
+td a {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    color: #005ab9;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+td a:hover {
+    color: #0a0050;
+    /* Cambiar color al pasar el ratón sobre los enlaces */
+}
+.modal {
+    display: block;
+    /* Asegura que el modal se muestre */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro para resaltar el modal */
+
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 60px;
+}
+.modal {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.form-control {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.btn-secondary {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 16px;
+    width: 180px;
+    height: 40px;
+    background-color: #28a745;
+    color: #ffffff;
+    border: 2px solid #013417;
+    padding: 5px;
+    display: inline-block;
+    margin-right: 10px;
+    /* Espacio entre botones */
+    box-shadow: inset 1px 1px 0px 0px #ffffff, inset -1px -1px 0px 0px #002575;
+    transition: background-color 0.2s ease;
+    margin-left: 5px;
+}
+
+.btn-secondary:hover {
+    background-color: rgb(6, 76, 22);
+
+    cursor: pointer;
+}

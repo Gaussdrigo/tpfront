@@ -1,0 +1,26 @@
+<!-- Modal Body -->
+<div class="modal fade" id="myModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+    aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">
+                    Editar proveedor
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body" *ngIf="proveedor">
+                    <!-- Contenido del modal -->
+                    <form (ngSubmit)="updateProveedor(proveedor)">
+                        <div>
+                            <label for="nombre">Nombre del Proveedor:</label>
+                            <input type="text" id="nombre" name="nombre" [(ngModel)]="proveedor.nombre" required />
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

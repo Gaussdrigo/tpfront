@@ -1,0 +1,14 @@
+#navbar {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#renders {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 20px;
+}

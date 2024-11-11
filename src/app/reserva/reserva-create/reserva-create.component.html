@@ -1,0 +1,62 @@
+
+<!-- Modal para Crear Reserva -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- modal-lg para más espacio -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Crear Reserva</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="reservaForm" (ngSubmit)="createReserva()">
+          <div formGroupName="cabecera">
+            <div class="mb-3">
+              <label for="fecha" class="col-form-label">Fecha:</label>
+              <input type="date" id="fecha" formControlName="fecha" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+              <label for="horaInicioAgendamiento" class="col-form-label">Hora Inicio Agendamiento:</label>
+              <select id="horaInicioAgendamiento" formControlName="horaInicioAgendamiento" class="form-control">
+                <option *ngFor="let hora of horasPredefinidas" [value]="hora">{{ hora }}</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="horaFinAgendamiento" class="col-form-label">Hora Fin Agendamiento:</label>
+              <select id="horaFinAgendamiento" formControlName="horaFinAgendamiento" class="form-control">
+                <option *ngFor="let hora of horasPredefinidas" [value]="hora">{{ hora }}</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="idProveedor" class="col-form-label">Proveedor:</label>
+              <select id="idProveedor" formControlName="idProveedor" class="form-control">
+                <option *ngFor="let proveedor of proveedores" [value]="proveedor.id">{{ proveedor.nombre }}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="col-form-label">Productos:</label>
+            <div formArrayName="detalles">
+              <div *ngFor="let detalle of detalles.controls; let i = index" [formGroupName]="i" class="mb-2">
+                <div class="input-group">
+                  <select formControlName="idProducto" class="form-control" required>
+                    <option value="" disabled selected>Seleccionar producto</option>
+                    <option *ngFor="let producto of productos" [value]="producto.id">{{ producto.nombre }}</option>
+                  </select>
+                  <input type="number" formControlName="cantidad" class="form-control" placeholder="Cantidad" required min="1" />
+                  <button type="button" class="btn btn-danger" (click)="removeProducto(i)">Eliminar</button>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-secondary" (click)="addProducto()">Añadir Producto</button>
+          </div>
+
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Crear Reserva</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

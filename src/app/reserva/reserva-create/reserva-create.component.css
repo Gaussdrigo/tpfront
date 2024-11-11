@@ -1,0 +1,87 @@
+h1 {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+    font-size: 60px;
+}
+
+td {
+    white-space: nowrap;
+    /* Evita que el contenido de las celdas se divida en varias líneas */
+}
+
+td button {
+    margin-right: 10px;
+    /* Añade espacio entre los botones */
+    display: inline-block;
+    /* Asegura que los botones estén alineados en línea */
+    width: 180px;
+    /* Mantiene el tamaño del botón */
+    height: 40px;
+    /* Mantiene el tamaño del botón */
+}
+
+.btn-primary {
+    /* Estilos ya existentes */
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #005ab9;
+    color: #ffffff;
+    border: 2px solid #012462;
+    padding: 5px;
+    box-shadow: inset 1px 1px 0px 0px #ffffff, inset -1px -1px 0px 0px #002575;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    width: 150px;
+}
+
+.btn-danger {
+    /* Estilos ya existentes */
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #b90000;
+    color: #ffffff;
+    border: 2px solid #290101;
+    padding: 5px;
+    box-shadow: inset 1px 1px 0px 0px #ffffff, inset -1px -1px 0px 0px #270000;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    width: 150px;
+}
+
+.btn-secondary {
+    /* Estilos ya existentes */
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #156b23;
+    color: #ffffff;
+    border: 2px solid #013105;
+    padding: 5px;
+    box-shadow: inset 1px 1px 0px 0px #ffffff, inset -1px -1px 0px 0px #003510;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    width: 150px;
+}
+
+.btn-primary:hover {
+    background-color: #0a0050;
+}
+
+.btn-secondary:hover {
+    background-color: #014716;
+}
+
+.btn-danger:hover {
+    background-color: #4e0000;
+}
+
+.modal {
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-size: 22px;
+}

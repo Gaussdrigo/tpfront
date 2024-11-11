@@ -1,0 +1,40 @@
+<!-- Botón para abrir el modal -->
+<div class="container-sm">
+    <div class="d-flex">
+        <div class="p-2 flex-grow-1">
+
+            <input class="form-control me-2" type="search" placeholder="Buscar por nombre" aria-label="Search"
+                [(ngModel)]="searchTerm" (ngModelChange)="onSearchChange($event)" name="searchTerm" />
+
+        </div>
+        <div class="p-2">
+            <button type="button" class="btn btn-secondary nuevoProveedor" (click)="createProveedor()">
+                Nuevo Proveedor
+                </button>
+                </div>
+                </div>
+                </div>
+                <div class="container-sm">
+    <table class="table">
+        <thead class="">
+            <tr>
+                <th>ID</th>
+                <th>Proveedor</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let proveedor of proveedores">
+                <td>{{ proveedor.id }}</td>
+                <td>{{ proveedor.nombre }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="editProveedor(proveedor)">Editar</button>
+                    <button (click)="deleteProveedor(proveedor)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-proveedor-edit [proveedor]="proveedorSeleccionado"></app-proveedor-edit>
+<app-proveedor-delete [proveedor]="proveedorSeleccionado"></app-proveedor-delete>
+<app-proveedor-create></app-proveedor-create>

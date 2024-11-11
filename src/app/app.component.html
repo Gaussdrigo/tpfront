@@ -1,0 +1,52 @@
+<nav *ngIf="showNavbar" class="border-bottom" id="navbar">
+    <div class="d-flex justify-content-center py-3">
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small" id="renders">
+            <li>
+                <a href="http://localhost:4200/" class="nav-link text-secondary">
+                    <!-- Imagen de Recepción -->
+                    <img src="home.png" alt="Home" width="45" height="45" class="d-block mx-auto mb-1">
+                    Inicio
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:4200/recepcion" class="nav-link text-secondary">
+                    <!-- Imagen de Recepción -->
+                    <img src="meeting.png" alt="Recepción" width="45" height="45" class="d-block mx-auto mb-1">
+                    Recepción
+                    </a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:4200/producto" class="nav-link text-dark">
+                    <!-- Imagen de Productos -->
+                    <img src="donut.png" alt="Productos" width="45" height="45" class="d-block mx-auto mb-1">
+                    Productos
+                    </a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:4200/proveedor" class="nav-link text-dark">
+                    <!-- Imagen de Proveedores -->
+                    <img src="team.png" alt="Proveedores" width="45" height="45" class="d-block mx-auto mb-1">
+                    Proveedores
+                    </a>
+                    </li>
+            <li>
+                <a href="http://localhost:4200/jaula" class="nav-link text-dark">
+                    <!-- Imagen de Jaulas -->
+                    <img src="jaula.png" alt="Jaulas" width="45" height="45" class="d-block mx-auto mb-1">
+                    Jaulas
+                    </a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:4200/reserva" class="nav-link text-dark">
+                    <!-- Imagen de Reservas -->
+                    <img src="calendar.png" alt="Reservas" width="45" height="45" class="d-block mx-auto mb-1">
+                    Reservas
+                    </a>
+                    </li>
+                    </ul>
+                    </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+

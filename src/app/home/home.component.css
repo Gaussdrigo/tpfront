@@ -1,0 +1,81 @@
+h1 {
+    font-size: 120px;
+    margin-bottom: 30px;
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+
+}
+
+h4 {
+    font-size: 30px;
+    margin-bottom: 30px;
+
+}
+
+.col-md-7 {
+    margin-top: 80px;
+
+
+}
+
+img {
+    /* Añade un borde suave alrededor de la imagen */
+    border: 3px solid #01a672;
+    border-radius: 15px;
+
+    /* Aplica sombra sutil para hacer que la imagen resalte */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+
+    /* Añade una animación de transformación al pasar el cursor por encima */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Asegúrate de que la imagen sea responsiva */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Añade un efecto de zoom suave cuando se pasa el cursor sobre la imagen */
+img:hover {
+    transform: scale(1.05);
+    /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+button {
+    /* Configuración de la fuente pixelada */
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+
+    /* Tamaño del botón */
+    width: 250px;
+    height: 50px;
+
+    /* Estilos del botón */
+    background-color: #017031;
+    /* Color de fondo del botón */
+    color: #ffffff;
+    /* Color del texto */
+    border: 2px solid #001907;
+    /* Borde oscuro similar al de la imagen */
+    padding: 5px;
+
+    /* Estilo para que el texto se vea en el centro */
+    justify-content: center;
+    align-items: center;
+
+    /* Sombra interna para darle profundidad */
+    box-shadow: inset 1px 1px 0px 0px #ffffff,
+        inset -1px -1px 0px 0px #002e1f;
+
+    /* Estilo de transición para el hover */
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    /* Cambia ligeramente el color del fondo en hover */
+    background-color: #024423;
+    transform: scale(1.03);
+    cursor: pointer;
+}

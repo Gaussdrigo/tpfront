@@ -1,0 +1,24 @@
+<div class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Seleccionar Jaula</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closePopup()"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="seleccionarJaula(selectedJaula)">
+                    <div class="mb-3">
+                        <label for="jaula" class="form-label">Jaula</label>
+                        <select id="jaula" [(ngModel)]="selectedJaula" name="jaula" class="form-select" required>
+                            <option *ngFor="let jaula of jaulasDisponibles" [value]="jaula.id">
+                                Jaula {{ jaula.id }}
+                            </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                    <button type="button" class="btn btn-secondary" (click)="closePopup()">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

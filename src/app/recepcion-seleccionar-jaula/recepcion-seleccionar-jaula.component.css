@@ -1,0 +1,19 @@
+.modal {
+    display: block;
+    /* Asegura que el modal se muestre */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro para resaltar el modal */
+    font-family: "Pixelify Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        font-size: 22px;
+}
+
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: auto;
+}

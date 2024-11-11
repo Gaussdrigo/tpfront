@@ -1,0 +1,80 @@
+<h1 style="text-align: center;">Recepcion</h1>
+<div class="container-sm">
+    <!-- Filtro de fecha -->
+    <div class="d-flex align-items-center mb-3 mt-3">
+        <input id="fecha" [(ngModel)]="selectedDate" type="date" class="form-control">
+        <button class="btn btn-secondary" (click)="filterByDate()">Filtrar</button>
+    </div>
+    <!-- Tabla de recepción de productos -->
+    <table class="table table-light table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID Turno</th>
+                <th>Hora Inicio Agendamiento</th>
+                <th>Hora Fin Agendamiento</th>
+                <th>Proveedor</th>
+                <th>Estado</th>
+                <th>Jaula</th>
+                <th>Hora Inicio Recepción</th> <!-- Estas columnas se colocan aquí -->
+                <th>Hora Fin Recepción</th> <!-- Estas columnas se colocan aquí -->
+                <th>Acciones</th> <!-- Acciones para iniciar y finalizar recepción -->
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let recepcion of filteredRecepciones">
+                <td>{{ recepcion.id }}</td>
+                <td>{{ recepcion.horaInicioAgendamiento }}</td>
+                <td>{{ recepcion.horaFinAgendamiento }}</td>
+                <td>{{ recepcion.idProveedor }}</td>
+                <td>{{ recepcion.estado }}</td> <!-- Mostrar estado de la recepción -->
+                <td>{{ recepcion.idJaula }}</td>
+                <td>{{ recepcion.horaInicioRecepcion }}</td> <!-- Hora de inicio de recepción -->
+                <td>{{ recepcion.horaFinRecepcion }}</td> <!-- Hora de fin de recepción -->
+                <td>
+                    <button *ngIf="recepcion.estado === 'pendiente'" class="btn btn-primary"
+                        (click)="iniciarRecepcion(recepcion.id)">Iniciar Recepción</button>
+                    <button *ngIf="recepcion.estado === 'en recepcion'" class="btn btn-success"
+                        (click)="finalizarRecepcion(recepcion)">Finalizar Recepción</button>
+                </td>
+                <td>
+                    <a href="#" (click)="abrirDetalles(recepcion, $event)">Ver detalles</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Componente de Selección de Jaula -->
+<app-recepcion-seleccionar-jaula *ngIf="mostrarPopup" [recepcionId]="recepcionSeleccionadaId"
+    (jaulaSeleccionada)="onJaulaSeleccionada($event)" (closePopupEvent)="closePopup()">
+</app-recepcion-seleccionar-jaula>
+
+<!-- Modal para mostrar los detalles -->
+<div *ngIf="mostrarDetalles" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalles de la Reserva</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="cerrarDetalles()"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let detalle of productosDetalles">
+                            <td>{{ detalle.nombre }}</td>
+                            <td>{{ detalle.cantidad }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

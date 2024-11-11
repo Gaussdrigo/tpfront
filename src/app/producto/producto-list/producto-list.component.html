@@ -1,0 +1,39 @@
+
+<div class="container-sm">
+    <div class="d-flex">
+        <div class="p-2 flex-grow-1">
+            <input class="form-control" type="search" placeholder="Buscar por nombre" aria-label="Search"
+                [(ngModel)]="searchTerm" name="search" (ngModelChange)="filterProductos()" />
+        </div>
+        <div class="p-2">
+                    <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-secondary" (click)="createProducto()">Nuevo Producto</button>
+            </div>
+            </div>
+            </div>
+            <div class="container-sm">
+                <table class="table table-light table-striped table-hover">
+                    <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of filteredProductos">
+                <td>{{ producto.id }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>
+                    <button class="btn btn-primary text-center" (click)="editProducto(producto)">Editar</button>
+                    <button (click)="deleteProducto(producto)" class="btn btn-danger text-center"
+                        style="margin-left: 10px;">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-producto-edit [producto]="productoSeleccionado"></app-producto-edit>
+<app-producto-delete [producto]="productoSeleccionado"></app-producto-delete>
+<app-producto-create></app-producto-create>

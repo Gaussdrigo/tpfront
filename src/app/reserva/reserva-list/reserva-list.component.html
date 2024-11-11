@@ -1,0 +1,60 @@
+<h1 style="text-align: center;">Reservas</h1>
+<div class="container-sm">
+    <div class="d-flex">
+        <div class="p-2 flex-grow-1">
+            <!-- Barra de búsqueda -->
+            <input class="form-control" type="search" placeholder="Buscar por fecha, proveedor o jaula" aria-label="Search"
+                [(ngModel)]="searchTerm" name="search" (ngModelChange)="filterReservas()" />
+        </div>
+        <div class="p-2">
+            <!-- Botón para abrir el modal de creación -->
+            <button type="button" class="btn btn-secondary" (click)="createReserva()">Nueva Reserva</button>
+        </div>
+    </div>
+</div>
+
+<div class="container-sm">
+    <!-- Tabla de reservas -->
+    <table class="table table-light table-striped table-hover">
+        <thead>
+            <tr>
+                <th>ID Turno</th>
+                <th>Fecha</th>
+                <th>Hora Inicio Agendamiento</th>
+                <th>Hora Fin Agendamiento</th>
+                <th>Proveedor</th>
+                <th>Jaula</th>
+                <th>Hora Inicio Recepción</th>
+                <th>Hora Fin Recepción</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reserva of filteredReservas">
+                <td>{{ reserva.id }}</td>
+                <td>{{ reserva.cabecera.fecha }}</td>
+                <td>{{ reserva.cabecera.horaInicioAgendamiento }}</td>
+                <td>{{ reserva.cabecera.horaFinAgendamiento }}</td>
+                <td>{{ reserva.cabecera.idProveedor }}</td>
+                <td>{{ reserva.cabecera.idJaula || '---'}}</td>
+                <td>{{ reserva.cabecera.horaInicioRecepcion || '---' }}</td>
+                <td>{{ reserva.cabecera.horaFinRecepcion || '---' }}</td>
+                <td>
+                    <ul>
+                        <li *ngFor="let detalle of reserva.detalles">
+                            Producto ID: {{ detalle?.idProducto }}, Cantidad: {{ detalle?.cantidad }}
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modales para acciones de reserva -->
+<app-reserva-create></app-reserva-create>
+<!-- 
+<app-reserva-edit [reserva]="reservaSeleccionada"></app-reserva-edit>
+<app-reserva-delete [reserva]="reservaSeleccionada"></app-reserva-delete>
+
+-->
